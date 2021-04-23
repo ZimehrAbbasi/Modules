@@ -1,0 +1,10 @@
+# core dumps
+core
+
+# Object files and libraries
+*.o
+*.a
+
+# Testfile
+hashtable
+hashtabletest
