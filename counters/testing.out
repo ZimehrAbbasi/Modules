@@ -1,0 +1,6 @@
+gcc -Wall -pedantic -std=c11 -ggdb  -I../lib   -c -o countertest.o countertest.c
+gcc -Wall -pedantic -std=c11 -ggdb  -I../lib   -c -o counters.o counters.c
+gcc -Wall -pedantic -std=c11 -ggdb  -I../lib countertest.o counters.o ../lib/file.o ../lib/mem.o  -o countertest
+./countertest
+2
+{5=100},{4=1},{3=1},{2=1},{1=2}
