@@ -49,7 +49,7 @@ hashtable_t* hashtable_new(const int num_slots){
 
 // Inserting key:item value into the hashtable
 bool hashtable_insert(hashtable_t* ht, const char* key, void* item){
-    if(ht != NULL && key != NULL){
+    if(ht != NULL && key != NULL && item != NULL){
         char *keycpy = (char *)mem_malloc(strlen(key) * sizeof(char));
         strcpy(keycpy, key);
 
@@ -126,7 +126,7 @@ void hashtable_delete(hashtable_t* ht, void (*itemdelete)(void* item) ){
         for(int i = 0; i < ht->size;i++){
             set_delete(sets[i], itemdelete);
         }
-        free(ht->set);
+        free(sets);
         free(ht);
     }
 }

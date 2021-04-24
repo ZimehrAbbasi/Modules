@@ -165,12 +165,14 @@ void set_delete(set_t *set, void (*itemdelete)(void *item))
                 (*itemdelete)(node->item); // delete node's item
             }
             setnode_t *next = node->next; // remember what comes next
-            mem_free(node->key);
+            char* key = node->key;
+            mem_free(key);
             mem_free(node); // free the node
             node = next;    // and move on to next
         }
 
         mem_free(set);
+        set = NULL;
     }
 #ifdef MEMTEST
     mem_report(stdout, "End of set_delete");

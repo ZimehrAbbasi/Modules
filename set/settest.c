@@ -39,6 +39,7 @@ int main(const int argc, const char *argv[])
             set_insert(set, key, ptr);
             namecount++;
         }
+        free(key);
     }
 
     printf("test with null set, good key, good item...\n");
