@@ -39,7 +39,6 @@ int main(const int argc, const char* argv[]){
 
     int count = 0;
     int *countptr = &count;
-    int namecount = 0;
     int hashtablesize = 10;
 
     hashtable_t *hashtable;
@@ -51,17 +50,13 @@ int main(const int argc, const char* argv[]){
     }
 
     printf("testing hashtable_insert...\n");
-    while (!feof(stdin)) {
-        char *key = file_readLine(stdin);
-        char *d = " ";
-        char *ptr = strtok(key, d);
-        if (key != NULL) {
-            key = ptr;
-            ptr = strtok(NULL, d);
-            hashtable_insert(hashtable, key, ptr);
-            namecount++;
-        }
-    }
+    hashtable_insert(hashtable, "key1", "Alfonso");
+    hashtable_insert(hashtable, "key2", "Amittai");
+    hashtable_insert(hashtable, "key3", "Zimehr");
+    hashtable_insert(hashtable, "key4", "Jessica");
+    hashtable_insert(hashtable, "key5", "Ricky");
+    hashtable_insert(hashtable, "key6", "Martin");
+    hashtable_insert(hashtable, "key7", "Rabiniranath");
     printf("\n");
     hashtable_print(hashtable, stdout, printstuff);
     printf("\n");
@@ -89,6 +84,6 @@ int main(const int argc, const char* argv[]){
     printf("\n");
 
     printf("Deleting the hashtable\n");
-    hashtable_delete(hashtable, NULL);
+    hashtable_delete(hashtable, namedelete);
     return 0;
 }

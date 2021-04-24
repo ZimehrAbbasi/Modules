@@ -25,13 +25,11 @@ set.o: ../set/set.h
 
 .PHONY: test valgrind clean
 
-# expects a file `test.names` to exist; it can contain any text.
-test: $(PROG) test.names
-	./$(PROG) < test.names
+test: $(PROG)
+	./$(PROG)
 
-# expects a file `test.names` to exist; it can contain any text.
-valgrind: $(PROG) test.names
-	valgrind ./$(PROG) < test.names
+valgrind: $(PROG)
+	valgrind ./$(PROG)
 
 clean:
 	rm -rf *.dSYM  # MacOS debugger info
