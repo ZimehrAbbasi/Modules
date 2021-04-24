@@ -21,6 +21,7 @@ int main(const int argc, const char *argv[])
         return 0;
     }
 
+    printf("testing set_insert...\n");
     while (!feof(stdin)) {
         char *key = file_readLine(stdin);
         char *d = " ";
@@ -41,10 +42,24 @@ int main(const int argc, const char *argv[])
     set_insert(set, "Dartmouth", NULL); 
     printf("test with null set, null key, null item...\n");
     set_insert(NULL, NULL, NULL);
+    printf("\n");
     
+    printf("testing set_find...\n");
+    void *item = set_find(set, "key1");
+    void *item1 = set_find(set, "3");
+    printf("Key: key1 Item: %s\n", (char *)item);
+    printf("Key: 3 Item: %s\n", (char *)item1);
+    printf("\n");
+
+    printf("The set:\n");
     set_print(set, stdout, printstuff);
+    printf("\n");
+
     set_iterate(set, countptr, itemcount);
     printf("count: %d\n", count);
+    printf("\n");
+
+    printf("Deleting the set\n");
     set_delete(set, NULL);
 
     return 0;

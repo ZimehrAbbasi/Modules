@@ -6,13 +6,14 @@
 #include "hash.h" 
 #include "mem.h"
 
-
+// Struct for hashtable
 typedef struct hashtable{
     set_t** set;
     int size;
     int num_items;
 } hashtable_t;
 
+// Creating a new hashtable
 hashtable_t* hashtable_new(const int num_slots){
 
     hashtable_t* hashtable = (hashtable_t*)mem_malloc(sizeof(hashtable_t));
@@ -37,6 +38,7 @@ hashtable_t* hashtable_new(const int num_slots){
     }
 }
 
+// Inserting key:item value into the hashtable
 bool hashtable_insert(hashtable_t* ht, const char* key, void* item){
     if(ht != NULL && key != NULL){
         char *keycpy = (char *)mem_malloc(strlen(key) * sizeof(char));
@@ -59,6 +61,7 @@ bool hashtable_insert(hashtable_t* ht, const char* key, void* item){
     return false;
 }
 
+// Finding the item associated with a a particular key
 void* hashtable_find(hashtable_t* ht, const char* key){
     if(ht != NULL && key != NULL){
         set_t** sets;
@@ -75,6 +78,7 @@ void* hashtable_find(hashtable_t* ht, const char* key){
     return NULL;
 }
 
+// Printing the hashtable
 void hashtable_print(hashtable_t* ht, FILE* fp, void (*itemprint)(FILE* fp, const char* key, void* item)){
     if(fp != NULL){
         if(ht != NULL){
@@ -93,6 +97,7 @@ void hashtable_print(hashtable_t* ht, FILE* fp, void (*itemprint)(FILE* fp, cons
     }
 }
 
+// Iterating through the hashtable
 void hashtable_iterate(hashtable_t* ht, void* arg, void (*itemfunc)(void* arg, const char* key, void* item)){
     if(ht != NULL && itemfunc != NULL){
         set_t** sets;
@@ -103,6 +108,7 @@ void hashtable_iterate(hashtable_t* ht, void* arg, void (*itemfunc)(void* arg, c
     }
 }
 
+// Deleting the hashtable
 void hashtable_delete(hashtable_t* ht, void (*itemdelete)(void* item) ){
     if (ht != NULL)
     {

@@ -1,0 +1,29 @@
+gcc -Wall -pedantic -std=c11 -ggdb  -I../lib   -c -o hashtabletest.o hashtabletest.c
+gcc -Wall -pedantic -std=c11 -ggdb  -I../lib hashtabletest.o hashtable.o ../lib/file.o ../lib/mem.o hash.o ../set/set.o  -o hashtabletest
+./hashtabletest < test.names
+testing hashtable_insert...
+
+{}
+{}
+{(8, Waldo)}
+{(10, Ribosome),(4, Jessica)}
+{(7, Rabiniranath)}
+{(9, Terrance),(5, Ricky)}
+{(6, Martin)}
+{(1, Alfonso)}
+{(2, Amittai)}
+{(3, Zimehr)}
+
+test with null hashtable, good key, good item...
+test with null key, good item...
+test with good key, null item...
+test with null hashtable, null key, null item...
+
+testing hashtable_find...
+Key: key1 Item: (null)
+Key: 3 Value: Zimehr
+
+testing hashtable_iterate...
+Total count: 10
+
+Deleting the hashtable

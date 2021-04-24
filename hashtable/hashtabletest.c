@@ -42,6 +42,7 @@ int main(const int argc, const char* argv[]){
         return 0;
     }
 
+    printf("testing hashtable_insert...\n");
     while (!feof(stdin)) {
         char *key = file_readLine(stdin);
         char *d = " ";
@@ -53,14 +54,33 @@ int main(const int argc, const char* argv[]){
             namecount++;
         }
     }
-
+    printf("\n");
     hashtable_print(hashtable, stdout, printstuff);
+    printf("\n");
+
+    printf("test with null hashtable, good key, good item...\n");
+    hashtable_insert(NULL, "Dartmouth", "College");
+    printf("test with null key, good item...\n");
+    hashtable_insert(hashtable, NULL, "Dartmouth"); 
+    printf("test with good key, null item...\n");
+    hashtable_insert(hashtable, "Dartmouth", NULL); 
+    printf("test with null hashtable, null key, null item...\n");
+    hashtable_insert(NULL, NULL, NULL);
+    printf("\n");
+
+    printf("testing hashtable_find...\n");
     void *item = hashtable_find(hashtable, "key1");
     void *item1 = hashtable_find(hashtable, "3");
+    printf("Key: key1 Item: %s\n", (char *)item);
+    printf("Key: 3 Value: %s\n", (char *)item1);
+    printf("\n");
+
+    printf("testing hashtable_iterate...\n");
     hashtable_iterate(hashtable, countptr, itemcount);
-    printf("count: %d\n", count);
-    printf("key1: %s\n", (char *)item);
-    printf("3: %s\n", (char *)item1);
-    hashtable_delete(hashtable, namedelete);
+    printf("Total count: %d\n", count);
+    printf("\n");
+
+    printf("Deleting the hashtable\n");
+    hashtable_delete(hashtable, NULL);
     return 0;
 }
