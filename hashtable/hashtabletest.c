@@ -40,9 +40,10 @@ int main(const int argc, const char* argv[]){
     int count = 0;
     int *countptr = &count;
     int namecount = 0;
+    int hashtablesize = 10;
 
     hashtable_t *hashtable;
-    hashtable = hashtable_new(10);
+    hashtable = hashtable_new(hashtablesize);
     if (hashtable == NULL)
     {
         printf("hashtable_new failed\n");
