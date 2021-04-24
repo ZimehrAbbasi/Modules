@@ -50,18 +50,15 @@ hashtable_t* hashtable_new(const int num_slots){
 // Inserting key:item value into the hashtable
 bool hashtable_insert(hashtable_t* ht, const char* key, void* item){
     if(ht != NULL && key != NULL && item != NULL){
-        char *keycpy = (char *)mem_malloc(strlen(key) * sizeof(char));
-        strcpy(keycpy, key);
-
         set_t** sets;
         sets = ht->set;
 
-        if(hashtable_find(ht, keycpy) != NULL){
+        if(hashtable_find(ht, key) != NULL){
             return false;
         }
 
-        unsigned long index = hash_jenkins(keycpy, ht->size);
-        bool success = set_insert(sets[index], keycpy, item);
+        unsigned long index = hash_jenkins(key, ht->size);
+        bool success = set_insert(sets[index], key, item);
         if(success){
             ht->num_items += 1;
             return true;
