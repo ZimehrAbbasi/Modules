@@ -35,4 +35,5 @@ clean:
 	rm -rf *.dSYM  # MacOS debugger info
 	rm -f *~ *.o
 	rm -f $(PROG)
+	rm -rf core
 
