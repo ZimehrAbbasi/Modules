@@ -1,3 +1,10 @@
+/* 
+ * settest.c
+ *
+ * @Author Zimehr Abbasi
+ * Testfile for set.c
+ */
+ 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
