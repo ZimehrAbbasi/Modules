@@ -1,5 +1,3 @@
-gcc -Wall -pedantic -std=c11 -ggdb  -I../lib   -c -o hashtabletest.o hashtabletest.c
-gcc -Wall -pedantic -std=c11 -ggdb  -I../lib hashtabletest.o hashtable.o ../lib/file.o ../lib/mem.o hash.o ../set/set.o  -o hashtabletest
 ./hashtabletest < test.names
 testing hashtable_insert...
 

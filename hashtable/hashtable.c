@@ -1,10 +1,19 @@
+/* 
+ * hashtable.c - CS50 'hashtable' module
+ *
+ * see hashtable.h for more information.
+ *
+ * @Author Zimehr Abbasi
+ * Module for creating a hashtable data structure
+ */
+ 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "hashtable.h"
-#include "set.h"
+#include "../set/set.h"
 #include "hash.h" 
-#include "mem.h"
+#include "../lib/mem.h"
 
 // Struct for hashtable
 typedef struct hashtable{

@@ -19,8 +19,8 @@ $(PROG): $(OBJS)
 
 hashtabletest.o: hashtable.h ../lib/file.h
 hashtable.o: hashtable.h
-hash.o: hash.c
-set.o: ../set/set.c
+hash.o: hash.h
+set.o: ../set/set.h
 ../lib/file.o: ../lib/file.h
 
 .PHONY: test valgrind clean

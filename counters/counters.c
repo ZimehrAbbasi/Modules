@@ -1,8 +1,17 @@
+/* 
+ * counters.c - CS50 'counters' module
+ *
+ * see counters.h for more information.
+ *
+ * @Author Zimehr Abbasi
+ * Module for creating a counter data structure
+ */
+ 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "counters.h"
-#include "mem.h"
+#include "../lib/mem.h"
 
 // Counters node struct
 typedef struct counternode

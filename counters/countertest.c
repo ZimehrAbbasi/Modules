@@ -20,14 +20,11 @@ int main(const int argc, const char *argv[])
     printf("\n");
 
     printf("testing counters_get...\n");
-    printf("Before:\n");
     counters_print(counters, stdout);
     int b = counters_get(counters, 1);
     int c = counters_get(counters, 8);
-    printf("After:\n");
     printf("Count of 1: %d\n", b);
     printf("Count of 8: %d\n", c);
-    counters_print(counters, stdout);
     printf("\n");
     
     printf("testing counters_set...\n");
