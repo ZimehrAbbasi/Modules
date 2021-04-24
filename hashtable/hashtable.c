@@ -34,7 +34,7 @@ hashtable_t* hashtable_new(const int num_slots){
     else
     {
         hashtable->set = mem_calloc(num_slots, sizeof(set_t*));
-        set_t** sets = mem_calloc(num_slots, sizeof(set_t*));
+        set_t** sets;
         sets = hashtable->set;
 
         for(int i = 0; i < num_slots; i++){
