@@ -4,6 +4,7 @@
 #include "set.h"
 #include "mem.h"
 
+// Set node struct
 typedef struct setnode
 {
     char *key;
@@ -11,14 +12,17 @@ typedef struct setnode
     struct setnode *next;
 } setnode_t;
 
+// Set struct
 typedef struct set
 {
     struct setnode *head;
     int size;
 } set_t;
 
+// Function prototype for creating new setnode
 static setnode_t *setnode_new(char *key, void *item);
 
+// Creating a new set
 set_t *
 set_new(void)
 {
@@ -37,6 +41,7 @@ set_new(void)
     }
 }
 
+// Inserting key:item pair into set
 bool set_insert(set_t *set, const char *key, void *item)
 {
     if (set != NULL && key != NULL && item != NULL)
@@ -76,6 +81,7 @@ bool set_insert(set_t *set, const char *key, void *item)
 #endif
 }
 
+// Finding item with corresponding key
 void *set_find(set_t *set, const char *key)
 {
     if (set != NULL && key != NULL)
@@ -94,6 +100,7 @@ void *set_find(set_t *set, const char *key)
     return NULL;
 }
 
+// Printing the set
 void set_print(set_t *set, FILE *fp, void (*itemprint)(FILE *fp, const char *key, void *item))
 {
 
@@ -124,6 +131,7 @@ void set_print(set_t *set, FILE *fp, void (*itemprint)(FILE *fp, const char *key
     }
 }
 
+// Iterating through the set
 void set_iterate(set_t *set, void *arg, void (*itemfunc)(void *arg, const char *key, void *item))
 {
     if (set != NULL && itemfunc != NULL)
@@ -136,6 +144,7 @@ void set_iterate(set_t *set, void *arg, void (*itemfunc)(void *arg, const char *
     }
 }
 
+// Deleting the set
 void set_delete(set_t *set, void (*itemdelete)(void *item))
 {
     if (set != NULL)

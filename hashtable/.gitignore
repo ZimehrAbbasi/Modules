@@ -8,3 +8,5 @@ core
 # Testfile
 hashtable
 hashtabletest
+
+.SILENT: *.o

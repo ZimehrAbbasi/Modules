@@ -4,6 +4,7 @@
 #include "counters.h"
 #include "mem.h"
 
+// Counters node struct
 typedef struct counternode
 {
     int key;
@@ -11,14 +12,17 @@ typedef struct counternode
     struct counternode *next;
 } counternode_t;
 
+// Counters struct
 typedef struct counters
 {
     struct counternode *head;
     int size;
 } counters_t;
 
+// Function prototype to create new counternode
 static counternode_t *counternode_new(const int key);
 
+// Creating a new counter
 counters_t *
 counters_new(void)
 {
@@ -37,6 +41,7 @@ counters_new(void)
     }
 }
 
+// Adding a key to the counter or incrementing predefinned key
 int counters_add(counters_t *ctrs, const int key)
 {
     if (ctrs != NULL && key >= 0)
@@ -61,6 +66,7 @@ int counters_add(counters_t *ctrs, const int key)
     return 0;
 }
 
+// Getting count for specific key
 int counters_get(counters_t *ctrs, const int key)
 {
     if (ctrs != NULL && key >= 0)
@@ -81,6 +87,7 @@ int counters_get(counters_t *ctrs, const int key)
     return 0;
 }
 
+// Set count for specific counter
 bool counters_set(counters_t *ctrs, const int key, const int count)
 {
     if (ctrs != NULL && key >= 0 && count >= 0)
@@ -104,6 +111,7 @@ bool counters_set(counters_t *ctrs, const int key, const int count)
     return 0;
 }
 
+// Print value of counter
 void counters_print(counters_t *ctrs, FILE *fp)
 {
     if (fp != NULL)
@@ -129,6 +137,7 @@ void counters_print(counters_t *ctrs, FILE *fp)
     }
 }
 
+// Iterating through the counter
 void counters_iterate(counters_t *ctrs, void *arg, void (*itemfunc)(void *arg, const int key, const int count))
 {
     if (ctrs != NULL && itemfunc != NULL)
@@ -141,6 +150,7 @@ void counters_iterate(counters_t *ctrs, void *arg, void (*itemfunc)(void *arg, c
     }
 }
 
+// Deleting counter
 void counters_delete(counters_t *ctrs)
 {
     if (ctrs != NULL)
