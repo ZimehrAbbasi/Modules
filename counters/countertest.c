@@ -1,3 +1,10 @@
+/* 
+ * countertest.c
+ *
+ * @Author Zimehr Abbasi
+ * Testfile for counters.c
+ */
+ 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

@@ -1,3 +1,10 @@
+/* 
+ * hashtabletest.c
+ *
+ * @Author Zimehr Abbasi
+ * Testfile for hashtable.c
+ */
+ 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
