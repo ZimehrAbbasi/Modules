@@ -1,8 +1,17 @@
+/* 
+ * set.c - CS50 'set' module
+ *
+ * see set.h for more information.
+ *
+ * @Author Zimehr Abbasi
+ * Module for creating a set data structure
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "set.h"
-#include "mem.h"
+#include "../lib/mem.h"
 
 // Set node struct
 typedef struct setnode
