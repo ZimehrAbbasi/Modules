@@ -1,5 +1,34 @@
-./hashtabletest < test.names
-free(): invalid pointer
-/bin/sh: line 1: 29885 Aborted                 (core dumped) ./hashtabletest < test.names
-Makefile:30: recipe for target 'test' failed
-make: *** [test] Error 134
+./hashtabletest
+testing hashtable_insert...
+
+{(key7, Rabiniranath)}
+{}
+{(key1, Alfonso)}
+{}
+{(key4, Jessica)}
+{(key5, Ricky)}
+{(key6, Martin)}
+{(key3, Zimehr),(key2, Amittai)}
+{}
+{}
+
+test with null hashtable, good key, good item...
+test with null key, good item...
+test with good key, null item...
+test with null hashtable, null key, null item...
+
+testing hashtable_find...
+Key: key1 Item: Alfonso
+Key: 3 Value: (null)
+
+testing hashtable_iterate...
+Total count: 7
+
+Deleting the hashtable
+Rabiniranath
+Alfonso
+Jessica
+Ricky
+Martin
+Zimehr
+Amittai
