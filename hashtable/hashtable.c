@@ -126,5 +126,7 @@ void hashtable_delete(hashtable_t* ht, void (*itemdelete)(void* item) ){
         for(int i = 0; i < ht->size;i++){
             set_delete(sets[i], itemdelete);
         }
+        free(ht->set);
+        free(ht);
     }
 }
